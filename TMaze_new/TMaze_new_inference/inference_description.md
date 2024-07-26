@@ -1,0 +1,1 @@
+In this directory, after executing `inference_tmaze.sh`, .csv files with inference results on 1, 2, 3, 5, 7, 9, and 12 segments appear.
