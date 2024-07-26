@@ -1,0 +1,53 @@
+wandb_config:
+    project_name: "v2-RATE-MinigridMemory"
+    wwandb: True
+
+data_config:
+  gamma: 1.0
+  normalize: 1 # 0 - not normalize, 1 - /255., 2 - standard scaling
+
+training_config:
+  learning_rate: 0.0006 # 1e-3
+  lr_end_factor: 0.1 # *  old: 0.001
+  beta_1: 0.9
+  beta_2: 0.95
+  weight_decay: 0.1
+  batch_size: 64 # 128
+  warmup_steps: 10000  # 100
+  final_tokens: 1000000
+  grad_norm_clip: 1.0 # 1.0
+  epochs: 250 #250
+  ckpt_epoch: 10
+  use_erl_stop: False
+  # inference during training
+  online_inference: True
+  # ! WARNING ! IMPORTANT INFO
+  # * IF YOU WANT TO TRAIN DT WITH context_length=90 (or if you want to train RATE with
+  # * 3 segments and context 30), set context_length=30 and sections=3
+  context_length: 10  # if RATE/GRATE: L = L, if DT: L = sections * L
+  sections: 3        # if RATE/GRATE: S = S, if DT: S = 1
+
+
+model_config:
+  mode: "minigrid_memory"
+  STATE_DIM: 3
+  ACTION_DIM: 4 # 2 if OHE else 4
+  n_token: 10000 # vocab_size
+  n_layer: 8 # 3 8
+  n_head: 10 # 1 10
+  n_head_ca: 2 # ! 2 | number of cross-attention heads
+  d_model: 64 # 128
+  d_head: 64 # 128 # divider of d_model
+  d_inner: 64 # 128 # > d_model 
+  dropout: 0.2 # 0.2
+  dropatt: 0.05 # 0.05
+  mem_len: 2
+  ext_len: 1
+  tie_weight: False
+  num_mem_tokens: 5 # 5 d_head * nmt = diff params
+  mem_at_end: True
+
+online_inference_config:
+  use_argmax: False # False
+  episode_timeout: 100 # 2100
+  desired_return: 1 # 56.5
