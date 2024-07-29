@@ -47,9 +47,9 @@ wandb_api: wandb_api_key
 We would deeply appreciate it if our paper could be cited:
 
 ```
-@article{staroverov2024recurrentactiontransformermemory,
+@article{cherepanov2024recurrentactiontransformermemory,
       title={Recurrent Action Transformer with Memory}, 
-      author={Alexey Staroverov and Egor Cherepanov and Dmitry Yudin and Alexey K. Kovalev and Aleksandr I. Panov},
+      author={Egor Cherepanov and Alexey Staroverov and Dmitry Yudin and Alexey K. Kovalev and Aleksandr I. Panov},
       year={2024},
       eprint={2306.09459},
       archivePrefix={arXiv},
