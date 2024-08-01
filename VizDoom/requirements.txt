@@ -1,0 +1,6 @@
+gym==0.25.2
+vizdoom==1.2.2
+tqdm
+opencv-python
+matplotlib
+wandb

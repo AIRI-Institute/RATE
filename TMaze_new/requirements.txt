@@ -1,0 +1,5 @@
+gym==0.26.2
+numpy==1.26.4
+matplotlib==3.9.0
+moviepy==1.0.3
+opencv-python

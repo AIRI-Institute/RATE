@@ -1,0 +1,5 @@
+memory-maze==1.0.3
+gym==0.26.2
+pygame==2.5.2
+pillow==10.3.0
+imageio==2.34.1
